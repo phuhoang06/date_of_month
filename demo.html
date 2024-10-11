@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="month" placeholder="Nhập số tháng (1-12)" min="1" max="12"><br>
+<input type="button" value="Kiểm tra" onclick="date()">
+<p id="result"></p>
+<script>
+  function date() {
+      let month = parseInt(document.getElementById("month").value);
+      let s = '';
+      switch (month) {
+          case 1:
+          case 3:
+          case 5:
+          case 7:
+          case 8:
+          case 10:
+          case 12:
+              s = "Tháng " + month + " có 31 ngày";
+              break;
+          case 2:
+              s = "Tháng 2 có 28 hoặc 29 ngày";
+              break;
+          case 4:
+          case 6:
+          case 9:
+          case 11:
+              s = "Tháng " + month + " có 30 ngày";
+              break;
+          default:
+              s = "Một năm có 12 tháng thôi!!";
+      }
+      document.getElementById("result").innerHTML = s;
+  }
+</script>
+
+</body>
+</html>
